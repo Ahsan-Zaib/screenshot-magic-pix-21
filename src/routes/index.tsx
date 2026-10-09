@@ -7,6 +7,8 @@ import { IMAGES } from "@/lib/site";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
       { title: "Shine & Co. — Professional Home & Office Cleaning" },
       { name: "description", content: "Trusted home, office and move cleaning with transparent pricing. Book online in minutes and save with recurring plans." },
       { property: "og:title", content: "Shine & Co. — A Cleaner Space. A Better Life." },
@@ -31,7 +33,7 @@ function Index() {
           <div className="mt-8"><RatingBadge /></div>
         </div>
         <div className="animate-rise [animation-delay:150ms]">
-          <BeforeAfter before={IMAGES.beforeLiving} after={IMAGES.afterLiving} alt="Living room" />
+          <BeforeAfter before={IMAGES.beforeLiving} after={IMAGES.afterLiving} alt="Living room" priority />
           <p className="mt-3 text-center text-sm text-muted-foreground">Drag to see the difference</p>
         </div>
       </section>
@@ -45,7 +47,7 @@ function Index() {
         <div className="container-x grid items-center gap-12 lg:grid-cols-2">
           <BeforeAfter before={IMAGES.beforeBath} after={IMAGES.afterBath} alt="Bathroom" />
           <div>
-            <SectionHead center={false} eyebrow="Real results" title="See the difference for yourself" sub="Grime, soap scum and clutter — gone. Drag the slider to compare." />
+            <SectionHead center={false} eyebrow="Cleaning transformations" title="See the difference for yourself" sub="Illustrative before-and-after cleaning comparisons." />
             <Button asChild variant="hero" size="lg" className="mt-8"><Link to="/before-after">View more results</Link></Button>
           </div>
         </div>

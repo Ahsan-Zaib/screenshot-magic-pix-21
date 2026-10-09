@@ -5,6 +5,8 @@ import { PageHero } from "@/components/site/Sections";
 export const Route = createFileRoute("/quote")({
   head: () => ({
     meta: [
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
       { title: "Get a Free Cleaning Quote — Shine & Co." },
       { name: "description", content: "Get an instant cleaning price estimate based on your home size, service and add-ons." },
       { property: "og:title", content: "Free Cleaning Quote — Shine & Co." },

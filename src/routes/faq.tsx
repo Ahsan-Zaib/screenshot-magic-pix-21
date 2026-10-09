@@ -4,6 +4,8 @@ import { Faq, FinalCta, PageHero } from "@/components/site/Sections";
 export const Route = createFileRoute("/faq")({
   head: () => ({
     meta: [
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
       { title: "Cleaning FAQ — Shine & Co." },
       { name: "description", content: "Answers about pricing, products, rescheduling, recurring plans, office and move-out cleaning." },
       { property: "og:title", content: "FAQ — Shine & Co." },

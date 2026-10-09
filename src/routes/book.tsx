@@ -12,6 +12,8 @@ export const Route = createFileRoute("/book")({
   validateSearch: (s) => search.parse(s),
   head: () => ({
     meta: [
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
       { title: "Book a Cleaning Online — Shine & Co." },
       { name: "description", content: "Choose your service, date and time and book your cleaning online in minutes." },
       { property: "og:title", content: "Book a Cleaning — Shine & Co." },

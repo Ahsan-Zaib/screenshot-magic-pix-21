@@ -5,6 +5,8 @@ import { IMAGES } from "@/lib/site";
 export const Route = createFileRoute("/about")({
   head: () => ({
     meta: [
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
       { title: "About Us — Shine & Co." },
       { name: "description", content: "Our story, mission and values. A trusted cleaning team built on reliability and care." },
       { property: "og:title", content: "About Shine & Co." },

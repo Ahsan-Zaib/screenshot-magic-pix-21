@@ -4,6 +4,8 @@ import { FinalCta, PageHero, Plans } from "@/components/site/Sections";
 export const Route = createFileRoute("/recurring")({
   head: () => ({
     meta: [
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
       { title: "Recurring Cleaning Plans — Shine & Co." },
       { name: "description", content: "Weekly, every-two-weeks and monthly cleaning plans. Save up to 20% on every visit." },
       { property: "og:title", content: "Recurring Cleaning Plans — Shine & Co." },
