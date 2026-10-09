@@ -1,10 +1,14 @@
 import afterLiving from "@/assets/after-living.jpg";
-import beforeLiving from "@/assets/before-living.jpg";
+import beforeLiving from "@/assets/before-regular.jpg";
 import afterBath from "@/assets/after-bath.jpg";
-import beforeBath from "@/assets/before-bath.jpg";
+import beforeBath from "@/assets/before-deep.jpg";
 import office from "@/assets/office.jpg";
-import beforeOffice from "@/assets/before-office.jpg";
+import beforeOffice from "@/assets/before-office-matched.jpg";
 import cleaner from "@/assets/cleaner-kitchen.jpg";
+import beforeParty from "@/assets/before-party.jpg";
+import afterMove from "@/assets/after-move.jpg";
+import beforeMoveIn from "@/assets/before-move-in.jpg";
+import beforeMoveOut from "@/assets/before-move-out.jpg";
 
 export const BUSINESS = {
   name: "Shine & Co.",
@@ -35,6 +39,7 @@ export type Service = {
   price: number;
   before: string;
   after: string;
+  categoryImage?: string;
 };
 
 export const SERVICES: Service[] = [
@@ -75,8 +80,9 @@ export const SERVICES: Service[] = [
     description: "We handle the cups, crumbs and sticky floors so you can enjoy the memories, not the mess.",
     included: ["Trash & bottle removal", "Spill & stain treatment", "Kitchen & dishes reset", "Floors deep mopped", "Bathrooms refreshed"],
     price: 159,
-    before: beforeLiving,
+    before: beforeParty,
     after: afterLiving,
+    categoryImage: beforeParty,
   },
   {
     slug: "move-in",
@@ -85,8 +91,9 @@ export const SERVICES: Service[] = [
     description: "A sanitizing clean of every surface, cabinet and closet before your boxes arrive.",
     included: ["Inside cabinets & drawers", "Closets & shelving", "Appliances inside & out", "Bathrooms disinfected", "Windows sills & tracks"],
     price: 229,
-    before: beforeBath,
-    after: afterBath,
+    before: beforeMoveIn,
+    after: afterMove,
+    categoryImage: beforeMoveIn,
   },
   {
     slug: "move-out",
@@ -95,8 +102,9 @@ export const SERVICES: Service[] = [
     description: "A landlord-ready clean designed around typical inspection checklists.",
     included: ["Everything in Move-In Cleaning", "Wall spot cleaning", "Oven & fridge interior", "Garage sweep (on request)", "Final walkthrough"],
     price: 249,
-    before: beforeLiving,
-    after: afterLiving,
+    before: beforeMoveOut,
+    after: afterMove,
+    categoryImage: beforeMoveOut,
   },
 ];
 
@@ -122,8 +130,8 @@ export function estimatePrice(opts: { service: string; bedrooms: number; bathroo
   if (!svc) return 0;
   const base = svc.price + Math.max(0, opts.bedrooms - 1) * 20 + Math.max(0, opts.bathrooms - 1) * 15;
   const addons = ADDONS.filter((a) => opts.addons.includes(a.id)).reduce((s, a) => s + a.price, 0);
-  const plan = PLANS.find((p) => p.id === opts.frequency)!;
-  return Math.round((base + addons) * (1 - plan.discount / 100));
+  const plan = PLANS.find((p) => p.id === opts.frequency);
+  return Math.round((base + addons) * (1 - (plan?.discount ?? 0) / 100));
 }
 
 export const REVIEWS = [

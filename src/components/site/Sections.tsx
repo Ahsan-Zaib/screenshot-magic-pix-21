@@ -45,7 +45,7 @@ export function ServiceCards({ limit }: { limit?: number }) {
     <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
       {SERVICES.slice(0, limit).map((s) => (
         <Link key={s.slug} to="/services" hash={s.slug} className="group overflow-hidden rounded-3xl border border-border bg-card shadow-soft transition-all hover:-translate-y-1 hover:shadow-lift">
-          <div className="aspect-[16/10] overflow-hidden"><img src={s.after} alt={s.name} loading="lazy" className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105" /></div>
+          <div className="aspect-[16/10] overflow-hidden"><img src={s.categoryImage ?? s.after} alt={s.name} loading="lazy" width={1536} height={1024} className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105" /></div>
           <div className="p-6">
             <div className="flex items-baseline justify-between">
               <h3 className="text-xl font-semibold">{s.name}</h3>

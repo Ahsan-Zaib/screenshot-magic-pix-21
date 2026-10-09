@@ -84,7 +84,6 @@ function ContactPage() {
             <p className="flex items-center gap-2 font-semibold"><Clock className="h-5 w-5 text-accent" />Business hours</p>
             {BUSINESS.hours.map(([d, h]) => <p key={d} className="mt-2 flex justify-between text-sm"><span>{d}</span><span className="text-muted-foreground">{h}</span></p>)}
           </div>
-          <iframe title="Map" className="h-56 w-full rounded-2xl border border-border" loading="lazy" src="https://www.google.com/maps?q=United+States&output=embed" />
         </aside>
       </section>
     </>
