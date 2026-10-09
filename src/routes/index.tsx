@@ -7,6 +7,8 @@ import { IMAGES } from "@/lib/site";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
       { title: "Shine & Co. — Professional Home & Office Cleaning" },
       { name: "description", content: "Trusted home, office and move cleaning with transparent pricing. Book online in minutes and save with recurring plans." },
       { property: "og:title", content: "Shine & Co. — A Cleaner Space. A Better Life." },

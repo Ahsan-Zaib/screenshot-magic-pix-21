@@ -14,6 +14,8 @@ import { BUSINESS, SERVICES, whatsappLink } from "@/lib/site";
 export const Route = createFileRoute("/contact")({
   head: () => ({
     meta: [
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
       { title: "Contact Us — Shine & Co." },
       { name: "description", content: "Call, WhatsApp or email us, or send a request and we'll get back to you quickly." },
       { property: "og:title", content: "Contact Shine & Co." },

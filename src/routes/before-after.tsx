@@ -8,6 +8,8 @@ import { Button } from "@/components/ui/button";
 export const Route = createFileRoute("/before-after")({
   head: () => ({
     meta: [
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
       { title: "Before & After Cleaning Results — Shine & Co." },
       { name: "description", content: "Explore illustrative before and after comparisons for home, office, party and move cleaning." },
       { property: "og:title", content: "Before & After — Shine & Co." },

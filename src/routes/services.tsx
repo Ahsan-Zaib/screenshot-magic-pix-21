@@ -8,6 +8,8 @@ import { SERVICES } from "@/lib/site";
 export const Route = createFileRoute("/services")({
   head: () => ({
     meta: [
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
       { title: "Cleaning Services & Prices — Shine & Co." },
       { name: "description", content: "Regular, deep, office, after-party, move-in and move-out cleaning. See what's included and starting prices." },
       { property: "og:title", content: "Cleaning Services — Shine & Co." },
